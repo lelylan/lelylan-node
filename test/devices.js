@@ -6,21 +6,22 @@ var config  = {
     'apiUri' : 'http://localhost:8000'
   },
 }
+
+var token = '42cf98a147a8973e682b91337abfaf53eca64336767dc8fec5f7fb8f11b8499b'
 var Lelylan = require('./../lib/lelylan-node.js')(config);
-var response;
+var response, error;
 
 describe('GET all devices',function() {
 
   before(function(done) {
-    Lelylan.Devices.all('0000', function(err, r){
-      if (err) console.log(err)
-      response = r;
-      done();
+    Lelylan.Devices.all(token, function(e, r) {
+      error = e; response = r; done();
     })
   })
 
   it('return a json array',function() {
-    console.log('LELY: response', response);
+    if (error) console.log(error);
+    console.log('Lelylan Node Test:', response);
   });
 });
 
