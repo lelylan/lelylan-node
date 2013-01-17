@@ -4,17 +4,15 @@ var request, response, error;
 
 describe('Lelylan.Devices',function() {
 
-describe('#all',function() {
-
-  describe('with no search params', function() {
+  describe('#get',function() {
 
     beforeEach(function(done) {
-      request = nock('http://api.lelylan.com').get('/devices').replyWithFile(200, __dirname + '/fixtures/devices.json');
+      request = nock('http://api.lelylan.com').get('/devices/1').replyWithFile(200, __dirname + '/fixtures/device.json');
       done();
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.all({}, function(e, r) {
+      Lelylan.Devices.get(1, function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -28,28 +26,52 @@ describe('#all',function() {
     });
   })
 
-  describe('with search params', function() {
+  describe('#all',function() {
 
-    beforeEach(function(done) {
-      request = nock('http://api.lelylan.com').get('/devices', {'per': 10}).replyWithFile(200, __dirname + '/fixtures/devices.json');
-      done();
-    })
+    describe('with no search params', function() {
 
-    beforeEach(function(done) {
-      Lelylan.Devices.all({per: 10}, function(e, r) {
-        error = e; response = r; done();
+      beforeEach(function(done) {
+        request = nock('http://api.lelylan.com').get('/devices').replyWithFile(200, __dirname + '/fixtures/devices.json');
+        done();
       })
+
+      beforeEach(function(done) {
+        Lelylan.Devices.all({}, function(e, r) {
+          error = e; response = r; done();
+        })
+      })
+
+      it('makes the HTTP request', function() {
+        request.isDone();
+      });
+
+      it('return a json array',function() {
+        response.should.be.a('object');
+      });
     })
 
-    it('makes the HTTP request', function() {
-      request.isDone();
-    });
+    describe('with search params', function() {
 
-    it('return a json array',function() {
-      response.should.be.a('object');
-    });
-  })
-});
+      beforeEach(function(done) {
+        request = nock('http://api.lelylan.com').get('/devices', {'per': 10}).replyWithFile(200, __dirname + '/fixtures/devices.json');
+        done();
+      })
+
+      beforeEach(function(done) {
+        Lelylan.Devices.all({'per': 10}, function(e, r) {
+          error = e; response = r; done();
+        })
+      })
+
+      it('makes the HTTP request', function() {
+        request.isDone();
+      });
+
+      it('return a json array',function() {
+        response.should.be.a('object');
+      });
+    })
+  });
 
 })
 
