@@ -1,0 +1,31 @@
+{
+  "name": "lelylan",
+  "version": "0.1.0",
+  "description": "Node.js client for the Lelylan API",
+  "author": "Andrea Reginato <andrea.reginato@gmail.com>",
+  "homepage": "http://github.com/lelylan/lelylan-node",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/lelylan/lelylan-node.git"
+  },
+  "engine": {
+    "node": "~0.8.x"
+  },
+  "devDependencies": {
+    "should": "~1.2.1",
+    "mocha": "~1.8.1"
+  },
+  "main": ".",
+  "scripts": {
+    "test": "node ./test/all.js"
+  },
+  "licenses": [
+    {
+      "type": "Copyright (c) 2013 Lelylan"
+    }
+  ],
+  "dependencies": {
+    "winston": "~0.6.2",
+    "request": "~2.12.0"
+  }
+}
