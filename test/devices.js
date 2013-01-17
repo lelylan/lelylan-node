@@ -1,10 +1,6 @@
 var config  = {
-  'lelylan' : {
-    'oauthAuthorizationUri' : 'http://localhost:3000/oauth/authorization',
-    'oauthTokenUri' : 'http://localhost:3000/oauth/token',
-    'apiUri' : 'http://localhost:8000'
-  },
-  'token': '42cf98a147a8973e682b91337abfaf53eca64336767dc8fec5f7fb8f11b8499b'
+  'endpoint' : 'http://localhost:8000',
+  'token'    : '42cf98a147a8973e682b91337abfaf53eca64336767dc8fec5f7fb8f11b8499b'
 }
 
 var Lelylan = require('./../lib/lelylan-node.js')(config);

@@ -26,25 +26,16 @@ Install the client library using git:
 * [Lelylan API](http://dev.lelylan.com)
 
 
-## Examples
-
-### Getting Started
-
-    var LelylanApi = require("lelylan");
-
-    var lelylan = new LelylanApi({
-      timeout: 5000 // optional
-    })
-
-
-### Authentication (get the access token)
-
-    // TODO
-
+## Getting started
 
 ### Create the Lelylan client.
 
-    lelylan.authenticate({ type: "oauth", token: token });
+Before calling Lelylan APIs you need to set the access token.
+To get an access token use libraries such as [node-oauth](https://github.com/ciaranj/node-oauth).
+
+		Lelylan = require('./../lib/lelylan-node.js')({ token: token });
+
+Lelylan support [three OAuth2 authorization flows](http://dev.lelylan.com/api/oauth).
 
 
 ### Examples
@@ -52,12 +43,18 @@ Install the client library using git:
 Like in Node.JS, callbacks are always the last argument. If the functions fails an
 error object is passed as first argument to the callback.
 
-    // TODO
+  	// Get all devices
+	  Lelylan.Devices.all(function(error, response) {
+      console.log(response)
+		})
+
+The response is an Object representing the resource body.
 
 
 ## More examples
 
-For more examples check out the [Lelylan Dev Center](http://dev.lelylan.com#language=node) examples in Node.
+For more examples check out the [Lelylan Dev Center](http://dev.lelylan.com#language=node)
+examples in Node.
 
 * [Device examples](docs/Lelylan/Client/Devices)
 * [Consumption examples](docs/Lelylan/Client/Consumptions)
@@ -70,33 +67,14 @@ For more examples check out the [Lelylan Dev Center](http://dev.lelylan.com#lang
 * [Locations examples](docs/Lelylan/Client/Locations)
 
 
-## Authorization flows
-
-Lelylan support four OAuth2 authorization flows.
-Use the [connect-auth](https://github.com/ciaranj/connect-auth) library
-to get the access token.
-
-### Authorization code flows
-
-    // TODO
-
-### Implicit grant flow
-
-    // TODO
-
-### Resource owner password credentials flow
-
-    // TODO
-
-
-TODO: All access tokens, when expired, are automatically refreshed.
-
-
 ## Settings
 
 ### API endpoint
 
-    // TODO
+Configuration block.
+
+  options = { 'endpoint' : 'http://localhost:8000' }
+	Lelylan = require('./../lib/lelylan-node.js')(options);
 
 
 ## Errors
