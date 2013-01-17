@@ -1,6 +1,5 @@
 var Lelylan = require('./../lib/lelylan-node.js')({ 'token': '5f7fb8f11b8499b' });
 var nock    = require('nock');
-
 var request, response, error;
 
 describe('GET all devices',function() {
@@ -16,10 +15,12 @@ describe('GET all devices',function() {
     })
   })
 
+  it('makes the HTTP request', function() {
+    request.isDone();
+  });
+
   it('return a json array',function() {
-    if (error) console.log('Error - Lelylan Node Test: ',  error);
-    console.log('Lelylan Node Test:', response);
-    console.log(request.isDone());
+    response.should.be.a('object');
   });
 });
 
