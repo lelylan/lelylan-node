@@ -6,10 +6,10 @@ test:
 		--reporter $(REPORTER) \
 		$(MOCHA_OPTS)
 
-test-growl:
+test-watch:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
     --reporter $(REPORTER) \
     --growl \
     --watch
 
-.PHONY: test test-growl
+.PHONY: test test-watch
