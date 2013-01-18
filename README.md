@@ -31,11 +31,10 @@ Install the client library using git:
 ### Create the Lelylan client.
 
 Before calling Lelylan APIs you need to set the access token.
-To get an access token use libraries such as [node-oauth](https://github.com/ciaranj/node-oauth).
+To get an access token use libraries such as [node-oauth](https://github.com/ciaranj/node-oauth)
+(Lelylan support [three OAuth2 authorization flows](http://dev.lelylan.com/api/oauth)).
 
-		Lelylan = require('./../lib/lelylan-node.js')({ token: token });
-
-Lelylan support [three OAuth2 authorization flows](http://dev.lelylan.com/api/oauth).
+		Lelylan = require('lelylan-node')({ token: token });
 
 
 ### Examples
@@ -49,6 +48,21 @@ error object is passed as first argument to the callback.
 		})
 
 The response is an Object representing the resource body.
+
+### Subscription services
+
+If you need to access to the subscription services you do not need the access token,
+but the Client ID and Client Secret.
+
+		credentials = { client: { id: 'client-id', secret: secret };
+		Lelylan = require('lelylan-node')(credentials);
+
+		// Get all subscriptions
+	  Lelylan.Subscriptions.all(function(error, response) {
+      console.log(response)
+		})
+
+Learn more about [subscriptions](http://localhost:4000/api/realtime#get-a-subscription).
 
 
 ## More examples
