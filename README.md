@@ -103,7 +103,7 @@ Lelylan.Device.all(function(error, response) {
 })
 ```
 
-Learn more about the [error representation](http://dev.lelylan.com/rest/core#errors).
+Learn more about the [error representation](http://dev.lelylan.com/api/core#errors).
 
 
 ## Contributing
