@@ -211,5 +211,51 @@ describe('Lelylan.Devices',function() {
       response.should.be.a('object');
     });
   });
+
+
+  describe('#activate',function() {
+
+    beforeEach(function(done) {
+      request = nock('http://api.lelylan.com').post('/activations/0a8f1006af').replyWithFile(200, __dirname + '/fixtures/device.json');
+      done();
+    })
+
+    beforeEach(function(done) {
+      Lelylan.Devices.activate('0a8f1006af', function(e, r) {
+        error = e; response = r; done();
+      })
+    })
+
+    it('makes the HTTP request', function() {
+      request.isDone();
+    });
+
+    it('return a json array',function() {
+      response.should.be.a('object');
+    });
+  });
+
+
+  describe('#deactivate',function() {
+
+    beforeEach(function(done) {
+      request = nock('http://api.lelylan.com').delete('/activations/0a8f1006af').replyWithFile(200, __dirname + '/fixtures/device.json');
+      done();
+    })
+
+    beforeEach(function(done) {
+      Lelylan.Devices.deactivate('0a8f1006af', function(e, r) {
+        error = e; response = r; done();
+      })
+    })
+
+    it('makes the HTTP request', function() {
+      request.isDone();
+    });
+
+    it('return a json array',function() {
+      response.should.be.a('object');
+    });
+  });
 })
 
