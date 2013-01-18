@@ -91,14 +91,20 @@ Lelylan = require('lelylan')(options);
 
 Exceptions are raised when a 4xx or 5xx status code is returned.
 
-    // TODO
+```javascript
+Lelylan.HTTPError
+```
 
+Through the error message attribute you can access the JSON representation.
 
-Through the error message attribute you can access the error information.
+```javascript
+Lelylan.Device.all(function(error, response) {
+  if (error) {
+    console.log(error.message)
+  }
+})
 
-    // TODO
-
-Learn more about the [error response structure](http://dev.lelylan.com/rest/core#errors).
+Learn more about the [error representation](http://dev.lelylan.com/rest/core#errors).
 
 
 ## Contributing

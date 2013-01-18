@@ -2,12 +2,12 @@ var Lelylan = require('./../lib/lelylan-node.js')({ 'token': '5f7fb8f11b8499b' }
 var nock    = require('nock');
 var request, response, error;
 
-describe.only('Lelylan Error',function() {
+describe('Lelylan Error',function() {
 
   describe('with status code 500',function() {
 
     beforeEach(function(done) {
-      request = nock('http://api.lelylan.com').get('/devices/1').reply(500, 'Server Error');
+      request = nock('http://api.lelylan.com').get('/devices/1').reply(500, 'Internal Server Error');
       done();
     })
 
@@ -22,8 +22,7 @@ describe.only('Lelylan Error',function() {
     });
 
     it('return a json array',function() {
-      console.log(response)
-      response.should.be.a('object');
+      error.should.be.a('object');
     });
   });
 
@@ -45,7 +44,7 @@ describe.only('Lelylan Error',function() {
     });
 
     it('return a json array',function() {
-      response.should.be.a('object');
+      error.should.be.a('object');
     });
   });
 
@@ -67,7 +66,7 @@ describe.only('Lelylan Error',function() {
     });
 
     it('return a json array',function() {
-      response.should.be.a('object');
+      error.should.be.a('object');
     });
   });
 
@@ -89,7 +88,7 @@ describe.only('Lelylan Error',function() {
     });
 
     it('return a json array',function() {
-      response.should.be.a('object');
+      error.should.be.a('object');
     });
   });
 })
