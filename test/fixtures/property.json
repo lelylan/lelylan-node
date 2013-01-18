@@ -1,0 +1,9 @@
+{
+  "uri": "http://api.lelylan.com/properties/5041e9e9230de31300000001",
+  "id": "5041e9e9230de31300000001",
+  "name":" Intensity",
+  "suggested": {"0": "Min", "25": "Low", "50": "Half", "75": "High", "100": "Max"},
+  "default": "0",
+  "created_at": "2012-09-01T10:56:41Z",
+  "updated_at": "2012-09-01T10:56:41Z"
+}
