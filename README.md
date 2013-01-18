@@ -99,9 +99,7 @@ Through the error message attribute you can access the JSON representation.
 
 ```javascript
 Lelylan.Device.all(function(error, response) {
-  if (error) {
-    console.log(error.message)
-  }
+  if (error) { console.log(error.message); }
 })
 ```
 
@@ -119,7 +117,7 @@ provide specs to your contribution.
 * Fork and clone the repository.
 * Run `npm install` for dependencies.
 * Run `make test` to execute all specs.
-* Run `make test-watch` to run your test suite at any change.
+* Run `make test-watch` to auto execute all specs when a file change.
 
 
 ## Coding guidelines
