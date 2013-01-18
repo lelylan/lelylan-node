@@ -103,6 +103,7 @@ Lelylan.Device.all(function(error, response) {
     console.log(error.message)
   }
 })
+```
 
 Learn more about the [error representation](http://dev.lelylan.com/rest/core#errors).
 
