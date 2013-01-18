@@ -12,13 +12,13 @@ Node client library is tested against Node ~0.8.x
 
 Install the client library using [npm](http://npmjs.org/):
 
-      $ npm install lelylan-node
+    $ npm install lelylan-node
 
 Install the client library using git:
 
-      $ git clone git://github.com/lelylan/lelylan-node.git
-      $ cd lelylan-node
-      $ npm install
+    $ git clone git://github.com/lelylan/lelylan-node.git
+    $ cd lelylan-node
+    $ npm install
 
 
 ## Documentation
@@ -39,13 +39,13 @@ Lelylan = require('lelylan-node')({ token: token });
 
 ### Examples
 
-Like in Node.JS, callbacks are always the last argument. If the functions fails an
-error object is passed as first argument to the callback.
+If the functions fails an error object is passed as first argument to the callback.
+Callbacks are always the last argument.
 
 ```javascript
 // Get all devices
 Lelylan.Devices.all(function(error, response) {
-	console.log(response)
+  console.log(response)
 })
 ```
 
@@ -57,12 +57,12 @@ If you need to access to the subscription services you do not need the access to
 but the Client ID and Client Secret.
 
 ```javascript
-credentials = { client: { id: 'client-id', secret: secret };
+credentials = { client: { id: 'client-id', secret: 'secret' } };
 Lelylan = require('lelylan-node')(credentials);
 
 // Get all subscriptions
 Lelylan.Subscriptions.all(function(error, response) {
-	console.log(response)
+  console.log(response)
 })
 ```
 
@@ -72,17 +72,7 @@ Learn more about [subscriptions](http://localhost:4000/api/realtime#get-a-subscr
 ## More examples
 
 For more examples check out the [Lelylan Dev Center](http://dev.lelylan.com#language=node)
-examples in Node.
-
-* [Device examples](docs/Lelylan/Client/Devices)
-* [Consumption examples](docs/Lelylan/Client/Consumptions)
-* [Hisotry examples](docs/Lelylan/Client/Histories)
-* [Types examples](docs/Lelylan/Client/Types)
-* [Properties examples](docs/Lelylan/Client/Properties)
-* [Functions examples](docs/Lelylan/Client/Functions)
-* [Statuses examples](docs/Lelylan/Client/Statuses)
-* [Categories examples](docs/Lelylan/Client/Categories)
-* [Locations examples](docs/Lelylan/Client/Locations)
+examples selecting the Node tab.
 
 
 ## Settings
@@ -93,7 +83,7 @@ Configuration block.
 
 ```javascript
 options = { 'endpoint' : 'http://localhost:8000' }
-Lelylan = require('./../lib/lelylan-node.js')(options);
+Lelylan = require('lelylan')(options);
 ```
 
 
@@ -121,7 +111,8 @@ provide specs to your contribution.
 
 * Fork and clone the repository.
 * Run `npm install` for dependencies.
-* Run `npm test` to execute all specs.
+* Run `make test` to execute all specs.
+* Run `make test-watch` to run your test suite at any change.
 
 
 ## Coding guidelines
