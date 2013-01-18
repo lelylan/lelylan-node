@@ -24,7 +24,8 @@ describe('Lelylan.Devices',function() {
     it('return a json array',function() {
       response.should.be.a('object');
     });
-  })
+  });
+
 
   describe('#privates',function() {
 
@@ -46,7 +47,8 @@ describe('Lelylan.Devices',function() {
     it('return a json array',function() {
       response.should.be.a('object');
     });
-  })
+  });
+
 
   describe('#all',function() {
 
@@ -70,7 +72,7 @@ describe('Lelylan.Devices',function() {
       it('return a json array',function() {
         response.should.be.a('object');
       });
-    })
+    });
 
     describe('with search params', function() {
 
@@ -92,8 +94,9 @@ describe('Lelylan.Devices',function() {
       it('return a json array',function() {
         response.should.be.a('object');
       });
-    })
+    });
   });
+
 
   describe('#create',function() {
 
@@ -115,7 +118,8 @@ describe('Lelylan.Devices',function() {
     it('return a json array',function() {
       response.should.be.a('object');
     });
-  })
+  });
+
 
   describe('#update',function() {
 
@@ -137,7 +141,8 @@ describe('Lelylan.Devices',function() {
     it('return a json array',function() {
       response.should.be.a('object');
     });
-  })
+  });
+
 
   describe('#delete',function() {
 
@@ -159,6 +164,52 @@ describe('Lelylan.Devices',function() {
     it('return a json array',function() {
       response.should.be.a('object');
     });
-  })
+  });
+
+
+  describe('#properties',function() {
+
+    beforeEach(function(done) {
+      request = nock('http://api.lelylan.com').put('/devices/1/properties', {'properties': {}}).replyWithFile(200, __dirname + '/fixtures/device.json');
+      done();
+    })
+
+    beforeEach(function(done) {
+      Lelylan.Devices.properties('1', {'properties': {}}, function(e, r) {
+        error = e; response = r; done();
+      })
+    })
+
+    it('makes the HTTP request', function() {
+      request.isDone();
+    });
+
+    it('return a json array',function() {
+      response.should.be.a('object');
+    });
+  });
+
+
+  describe('#execute',function() {
+
+    beforeEach(function(done) {
+      request = nock('http://api.lelylan.com').put('/devices/1/functions', {'function': ''}).replyWithFile(200, __dirname + '/fixtures/device.json');
+      done();
+    })
+
+    beforeEach(function(done) {
+      Lelylan.Devices.execute('1', {'function': ''}, function(e, r) {
+        error = e; response = r; done();
+      })
+    })
+
+    it('makes the HTTP request', function() {
+      request.isDone();
+    });
+
+    it('return a json array',function() {
+      response.should.be.a('object');
+    });
+  });
 })
 
