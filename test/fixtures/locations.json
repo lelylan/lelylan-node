@@ -1,0 +1,32 @@
+[{
+  "uri": "http://api.lelylan.com/locations/50427d2414a0d61200000002",
+  "id": "50427d2414a0d61200000002",
+  "name": "Ground floor",
+  "type": "floor",
+  "created_at": "2012-09-01T21:24:52Z",
+  "updated_at": "2012-09-01T21:24:52Z",
+  "parent": {
+    "uri": "http://api.lelylan.com/locations/50427cef14a0d61200000001",
+    "id": "50427cef14a0d61200000001",
+    "name": "Country house"
+  },
+  "ancestors": [{
+    "uri": "http://api.lelylan.com/locations/50427cef14a0d61200000001",
+    "id": "50427cef14a0d61200000001",
+    "name": "Country house"
+  }],
+  "locations": [{
+    "uri": "http://api.lelylan.com/locations/50427d5914a0d60a00000001",
+    "id": "50427d5914a0d60a00000001",
+    "name": "kitchen"
+  }, {
+    "uri": "http://api.lelylan.com/locations/50427d7314a0d61000000001",
+    "id": "50427d7314a0d61000000001",
+    "name": "Bedroom"
+  }],
+  "devices": [{
+    "uri": "http://api.lelylan.com/devices/50427de78f76ad1000000001",
+    "id": "50427de78f76ad1000000001",
+    "name": "Entrance Light"
+  }]
+}]
