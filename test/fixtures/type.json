@@ -1,0 +1,62 @@
+{
+  "uri": "http://api.lelylan.com/types/5042234270eda61200000006",
+  "id": "5042234270eda61200000006",
+  "name": "Dimmer",
+  "created_at": "2012-09-01T15:01:22Z",
+  "updated_at": "2012-09-01T15:01:22Z",
+  "properties": [{
+    "uri": "http://api.lelylan.com/properties/50420c3a267ff51300000001",
+    "id": "50420c3a267ff51300000001",
+    "name": "Intensity",
+    "suggested": {"0": "Min", "25": "Low", "50": "Half", "75": "High", "100": "Max"},
+    "default": "0",
+  }, {
+    "uri": "http://api.lelylan.com/properties/50420c7e267ff51000000001",
+    "id": "50420c7e267ff51000000001",
+    "name": "Status",
+    "suggested": {"on": "On", "off": "Off"},
+    "default": "off",
+  }],
+  "functions": [{
+    "uri": "http://api.lelylan.com/functions/5042205c70eda61000000003",
+    "id": "5042205c70eda61000000003",
+    "name": "Set intensity",
+    "properties": [{
+      "uri": "http://api.lelylan.com/properties/50420c7e267ff51000000001",
+      "value": "on"
+    }, {
+      "uri": "http://api.lelylan.com/properties/50420c3a267ff51300000001",
+      "value": "{{100}}"
+    }]
+  }, {
+    "uri": "http://api.lelylan.com/functions/5042209370eda61000000005",
+    "id": "5042209370eda61000000005",
+    "name": "Turn on",
+    "properties": [{
+      "uri": "http://api.lelylan.com/properties/50420c7e267ff51000000001",
+      "value": "on"
+    }]
+  }, {
+    "uri": "http://api.lelylan.com/functions/504220c470eda60d00000004",
+    "id": "504220c470eda60d00000004",
+    "name": "Turn off",
+    "properties": [{
+      "uri": "http://api.lelylan.com/properties/50420c7e267ff51000000001",
+      "value": "off"
+    }]
+  }],
+  "statuses": [{
+    "uri": "http://api.lelylan.com/statuses/50421dbd70eda60a0000000b",
+    "id": "50421dbd70eda60a0000000b",
+    "name": "Setting intensity",
+    "properties": [{
+      "uri": "http://api.lelylan.com/properties/50420c7e267ff51000000001",
+      "values": ["on"],
+      "pending": false
+    }, {
+      "uri": "http://api.lelylan.com/properties/50420c3a267ff51300000001",
+      "values": ["1..100"],
+      "pending": true
+    }]
+  }]
+}
