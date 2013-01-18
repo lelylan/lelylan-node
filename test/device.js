@@ -2,7 +2,7 @@ var Lelylan = require('./../lib/lelylan-node.js')({ 'token': '5f7fb8f11b8499b' }
 var nock    = require('nock');
 var request, response, error;
 
-describe('Lelylan.Devices',function() {
+describe('Lelylan.Device',function() {
 
   describe('#find',function() {
 
@@ -12,7 +12,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.find('1', function(e, r) {
+      Lelylan.Device.find('1', function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -35,7 +35,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.privates('1', function(e, r) {
+      Lelylan.Device.privates('1', function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -60,7 +60,7 @@ describe('Lelylan.Devices',function() {
       })
 
       beforeEach(function(done) {
-        Lelylan.Devices.all({}, function(e, r) {
+        Lelylan.Device.all({}, function(e, r) {
           error = e; response = r; done();
         })
       })
@@ -82,7 +82,7 @@ describe('Lelylan.Devices',function() {
       })
 
       beforeEach(function(done) {
-        Lelylan.Devices.all({'per': 10}, function(e, r) {
+        Lelylan.Device.all({'per': 10}, function(e, r) {
           error = e; response = r; done();
         })
       })
@@ -106,7 +106,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.create({'name': 'Device'}, function(e, r) {
+      Lelylan.Device.create({'name': 'Device'}, function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -129,7 +129,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.update('1', {'name': 'Updated'}, function(e, r) {
+      Lelylan.Device.update('1', {'name': 'Updated'}, function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -152,7 +152,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.delete('1', function(e, r) {
+      Lelylan.Device.delete('1', function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -175,7 +175,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.properties('1', {'properties': {}}, function(e, r) {
+      Lelylan.Device.properties('1', {'properties': {}}, function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -198,7 +198,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.execute('1', {'function': ''}, function(e, r) {
+      Lelylan.Device.execute('1', {'function': ''}, function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -221,7 +221,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.activate('0a8f1006af', function(e, r) {
+      Lelylan.Device.activate('0a8f1006af', function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -244,7 +244,7 @@ describe('Lelylan.Devices',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Devices.deactivate('0a8f1006af', function(e, r) {
+      Lelylan.Device.deactivate('0a8f1006af', function(e, r) {
         error = e; response = r; done();
       })
     })

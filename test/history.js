@@ -2,7 +2,7 @@ var Lelylan = require('./../lib/lelylan-node.js')({ 'token': '5f7fb8f11b8499b' }
 var nock    = require('nock');
 var request, response, error;
 
-describe('Lelylan.Histories',function() {
+describe('Lelylan.History',function() {
 
   describe('#find',function() {
 
@@ -12,7 +12,7 @@ describe('Lelylan.Histories',function() {
     })
 
     beforeEach(function(done) {
-      Lelylan.Histories.find('1', function(e, r) {
+      Lelylan.History.find('1', function(e, r) {
         error = e; response = r; done();
       })
     })
@@ -37,7 +37,7 @@ describe('Lelylan.Histories',function() {
       })
 
       beforeEach(function(done) {
-        Lelylan.Histories.all({}, function(e, r) {
+        Lelylan.History.all({}, function(e, r) {
           error = e; response = r; done();
         })
       })
@@ -59,7 +59,7 @@ describe('Lelylan.Histories',function() {
       })
 
       beforeEach(function(done) {
-        Lelylan.Histories.all({'per': 10}, function(e, r) {
+        Lelylan.History.all({'per': 10}, function(e, r) {
           error = e; response = r; done();
         })
       })
