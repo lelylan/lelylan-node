@@ -9,8 +9,10 @@ describe('Lelylan.Physical',function() {
     beforeEach(function(done) {
 			var signature = 'b919e6d73fb956335507b809c457cbda0e4856e2';
       request = nock('http://mqtt.lelylan.com')
-								.matchHeader('X-Physical-Signature', signature)
-								.put('/physicals/1', {'properties': {}}).reply(202);
+  							.filteringRequestBody(function(path) {return '*'})
+								//.matchHeader('X-Physical-Signature', signature)
+								.put('/physicals/1', "*")
+								.reply(202);
       done();
     })
 
