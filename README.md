@@ -12,7 +12,7 @@ Node client library is tested against Node ~0.8.x
 
 Install the client library using [npm](http://npmjs.org/):
 
-      $ npm install github
+      $ npm install lelylan-node
 
 Install the client library using git:
 
@@ -31,21 +31,23 @@ Install the client library using git:
 ### Create the Lelylan client.
 
 Before calling Lelylan APIs you need to set the access token.
-To get an access token use libraries such as [node-oauth](https://github.com/ciaranj/node-oauth)
-(Lelylan support [three OAuth2 authorization flows](http://dev.lelylan.com/api/oauth)).
+To get an access token we suggest you to use [node-oauth](https://github.com/ciaranj/node-oauth).
 
-		Lelylan = require('lelylan-node')({ token: token });
-
+```javascript
+Lelylan = require('lelylan-node')({ token: token });
+```
 
 ### Examples
 
 Like in Node.JS, callbacks are always the last argument. If the functions fails an
 error object is passed as first argument to the callback.
 
-  	// Get all devices
-	  Lelylan.Devices.all(function(error, response) {
-      console.log(response)
-		})
+```javascript
+// Get all devices
+Lelylan.Devices.all(function(error, response) {
+	console.log(response)
+})
+```
 
 The response is an Object representing the resource body.
 
@@ -54,13 +56,15 @@ The response is an Object representing the resource body.
 If you need to access to the subscription services you do not need the access token,
 but the Client ID and Client Secret.
 
-		credentials = { client: { id: 'client-id', secret: secret };
-		Lelylan = require('lelylan-node')(credentials);
+```javascript
+credentials = { client: { id: 'client-id', secret: secret };
+Lelylan = require('lelylan-node')(credentials);
 
-		// Get all subscriptions
-	  Lelylan.Subscriptions.all(function(error, response) {
-      console.log(response)
-		})
+// Get all subscriptions
+Lelylan.Subscriptions.all(function(error, response) {
+	console.log(response)
+})
+```
 
 Learn more about [subscriptions](http://localhost:4000/api/realtime#get-a-subscription).
 
@@ -87,8 +91,10 @@ examples in Node.
 
 Configuration block.
 
-  options = { 'endpoint' : 'http://localhost:8000' }
-	Lelylan = require('./../lib/lelylan-node.js')(options);
+```javascript
+options = { 'endpoint' : 'http://localhost:8000' }
+Lelylan = require('./../lib/lelylan-node.js')(options);
+```
 
 
 ## Errors
