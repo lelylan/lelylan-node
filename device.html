@@ -25,10 +25,10 @@ An error object is passed as first argument and the result as last.</li>
   <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <h3>GET /devices</h3>
 
 <p>Retrieve a list of owned devices.
-<a href="http://dev.lelylan.com/api/devices#get-all-info">Learn more on Dev Center</a>.</p>
+<a href="http://dev.lelylan.com/api/devices#get-all-devices">Learn more on Dev Center</a>.</p>
 
 <ul>
-<li><code>options</code> - An object containing the search params. <a href="http://dev.lelylan.com/api/devices#get-all-info">See accepted params</a>.</li>
+<li><code>options</code> - An object containing the search params. <a href="http://dev.lelylan.com/api/devices#get-all-devices">See accepted params</a>.</li>
 <li><code>callback</code> - The callback function returning the results.
 An error object is passed as first argument and the result as last.</li>
 </ul>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="kd">function</span> <span class="nx">all</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
@@ -96,7 +96,7 @@ An error object is passed as first argument and the result as last.</li>
   <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-10">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-10">&#182;</a>               </div>               <h3>POST /activations/:activation_code</h3>
 
 <p>Activate a device and returns extended information for it.
-<a href="http://dev.lelylan.com/api/devices#activate-a-device">Learn more on Dev Center</a>.</p>
+<a href="http://dev.lelylan.com/api/devices/activations#activate-a-device">Learn more on Dev Center</a>.</p>
 
 <ul>
 <li><code>activation_code</code> - A String that represents the device activation code.</li>
@@ -107,7 +107,7 @@ An error object is passed as first argument and the result as last.</li>
   <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-11">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-11">&#182;</a>               </div>               <h3>DELETE /activations/:activation_code</h3>
 
 <p>Deactivate a device and returns extended information for it.
-<a href="http://dev.lelylan.com/api/devices#deactivate-a-device">Learn more on Dev Center</a>.</p>
+<a href="http://dev.lelylan.com/api/devices/activations#deactivate-a-device">Learn more on Dev Center</a>.</p>
 
 <ul>
 <li><code>activation_code</code> - A String that represents the device activation code.</li>
