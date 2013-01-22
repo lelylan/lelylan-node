@@ -21,11 +21,6 @@ Install the client library using git:
     $ npm install
 
 
-## Documentation
-
-* [Lelylan API](http://dev.lelylan.com)
-
-
 ## Getting started
 
 Before calling Lelylan APIs you need to set the access token using
