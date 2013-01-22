@@ -28,82 +28,45 @@ Install the client library using git:
 
 ## Getting started
 
-### Create the Lelylan client.
-
-Before calling Lelylan APIs you need to set the access token.
-To get an access token we suggest you to use [node-oauth](https://github.com/ciaranj/node-oauth).
+Before calling Lelylan APIs you need to set the access token using
+[Simple OAuth2](https://github.com/andreareginato/simple-oauth2).
 
 ```javascript
+// Set the OAuth2 client credentials
+var credentials = { client: { id: '<client-id>', secret: '<client-secret>', site: 'https://example.org' }};
+
+// Initialize the OAuth2 Library
+var OAuth2 = require('simple-oauth2')(credentials);
+
+// Authorization OAuth2 URI
+var authorization_uri = OAuth2.AuthCode.authorizeURL({ redirect_uri: 'http://localhost:3000/callback' });
+
+// Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
+res.redirect(authorization_uri);
+
+// Get the access token object.
+// The authorization code is given from the previous step.
+var token;
+OAuth2.AuthCode.getToken({ code: 'authorization-code', redirectURI: 'http://localhost:3000/callback' },
+  function(error, result) { token = OAuth2.AccessToken.create(result); }
+);
+
+// Initialize Lelylan Node library
 Lelylan = require('lelylan-node')({ token: token });
-```
 
-### Examples
-
-If the functions fails an error object is passed as first argument to the callback.
-Callbacks are always the last argument.
-
-```javascript
 // Get all devices
 Lelylan.Devices.all(function(error, response) {
   console.log(response)
 })
 ```
 
-The response is an Object representing the resource body.
-
-### Subscription services
-
-If you need to access to the subscription services you do not need the access token,
-but the Client ID and Client Secret.
-
-```javascript
-credentials = { client: { id: 'client-id', secret: 'secret' } };
-Lelylan = require('lelylan-node')(credentials);
-
-// Get all subscriptions
-Lelylan.Subscriptions.all(function(error, response) {
-  console.log(response)
-})
-```
-
-Learn more about [subscriptions](http://localhost:4000/api/realtime#get-a-subscription).
+Using Simple OAuth2 the access token is automatically refreshed when expired. Using
+other OAuth2 libraries could not work for Lelylan Node.
 
 
-## More examples
+### Documentation
 
-For more examples check out the [Lelylan Dev Center](http://dev.lelylan.com#language=node)
-examples selecting the Node tab.
-
-
-## Settings
-
-### API endpoint
-
-Configuration block.
-
-```javascript
-options = { 'endpoint' : 'http://localhost:8000' }
-Lelylan = require('lelylan')(options);
-```
-
-
-## Errors
-
-Exceptions are raised when a 4xx or 5xx status code is returned.
-
-```javascript
-Lelylan.HTTPError
-```
-
-Through the error message attribute you can access the JSON representation.
-
-```javascript
-Lelylan.Device.all(function(error, response) {
-  if (error) { console.log(error.message); }
-})
-```
-
-Learn more about the [error representation](http://dev.lelylan.com/api/core#errors).
+Check out the complete [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
 
 
 ## Contributing
