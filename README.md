@@ -59,8 +59,8 @@ Using Simple OAuth2 the access token is automatically refreshed when expired.
 
 ### Documentation
 
-* Check out the complete [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
-* Check out [Lelylan Dev Center](http://dev.lelylan.com/api#language=node)
+* [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
+* [Lelylan Dev Center](http://dev.lelylan.com/api#language=node)
 
 
 ## Contributing
@@ -91,6 +91,7 @@ Use the [issue tracker](http://github.com/lelylan/lelylan-node/issues) for bugs.
 ## Links
 
 * [GIT Repository](http://github.com/lelylan/lelylan-node)
+* [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
 * [Lelylan Dev Center](http://dev.lelylan.com)
 * [Lelylan Site](http://lelylan.com)
 
