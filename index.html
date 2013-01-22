@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>lelylan-node by lelylan</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/lelylan/lelylan-node">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/lelylan/lelylan-node/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/lelylan/lelylan-node/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>lelylan-node</h1>
+          <p>Node.js wrapper for Lelylan API</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/lelylan">lelylan</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Lelylan API for Node.js</h1>
+
+<p>Node.js client library for <a href="http://dev.lelylan.com">Lelylan API</a></p>
+
+<h2>Requirements</h2>
+
+<p>Node client library is tested against Node ~0.8.x</p>
+
+<h2>Installation</h2>
+
+<p>Install the client library using <a href="http://npmjs.org/">npm</a>:</p>
+
+<pre><code>$ npm install lelylan-node
+</code></pre>
+
+<p>Install the client library using git:</p>
+
+<pre><code>$ git clone git://github.com/lelylan/lelylan-node.git
+$ cd lelylan-node
+$ npm install
+</code></pre>
+
+<h2>Documentation</h2>
+
+<ul>
+<li><a href="http://dev.lelylan.com">Lelylan API</a></li>
+</ul><h2>Getting started</h2>
+
+<h3>Create the Lelylan client.</h3>
+
+<p>Before calling Lelylan APIs you need to set the access token.
+To get an access token we suggest you to use <a href="https://github.com/ciaranj/node-oauth">node-oauth</a>.</p>
+
+<div class="highlight"><pre><span class="nx">Lelylan</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lelylan-node'</span><span class="p">)({</span> <span class="nx">token</span><span class="o">:</span> <span class="nx">token</span> <span class="p">});</span>
+</pre></div>
+
+<h3>Examples</h3>
+
+<p>If the functions fails an error object is passed as first argument to the callback.
+Callbacks are always the last argument.</p>
+
+<div class="highlight"><pre><span class="c1">// Get all devices</span>
+<span class="nx">Lelylan</span><span class="p">.</span><span class="nx">Devices</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+<p>The response is an Object representing the resource body.</p>
+
+<h3>Subscription services</h3>
+
+<p>If you need to access to the subscription services you do not need the access token,
+but the Client ID and Client Secret.</p>
+
+<div class="highlight"><pre><span class="nx">credentials</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">client</span><span class="o">:</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">'client-id'</span><span class="p">,</span> <span class="nx">secret</span><span class="o">:</span> <span class="s1">'secret'</span> <span class="p">}</span> <span class="p">};</span>
+<span class="nx">Lelylan</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lelylan-node'</span><span class="p">)(</span><span class="nx">credentials</span><span class="p">);</span>
+
+<span class="c1">// Get all subscriptions</span>
+<span class="nx">Lelylan</span><span class="p">.</span><span class="nx">Subscriptions</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+<p>Learn more about <a href="http://localhost:4000/api/realtime#get-a-subscription">subscriptions</a>.</p>
+
+<h2>More examples</h2>
+
+<p>For more examples check out the <a href="http://dev.lelylan.com#language=node">Lelylan Dev Center</a>
+examples selecting the Node tab.</p>
+
+<h2>Settings</h2>
+
+<h3>API endpoint</h3>
+
+<p>Configuration block.</p>
+
+<div class="highlight"><pre><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'endpoint'</span> <span class="o">:</span> <span class="s1">'http://localhost:8000'</span> <span class="p">}</span>
+<span class="nx">Lelylan</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lelylan'</span><span class="p">)(</span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+
+<h2>Errors</h2>
+
+<p>Exceptions are raised when a 4xx or 5xx status code is returned.</p>
+
+<pre><code>// TODO
+</code></pre>
+
+<p>Through the error message attribute you can access the error information.</p>
+
+<pre><code>// TODO
+</code></pre>
+
+<p>Learn more about the <a href="http://dev.lelylan.com/rest/core#errors">error response structure</a>.</p>
+
+<h2>Contributing</h2>
+
+<p>Fork the repo on github and send a pull requests with topic branches. Do not forget to
+provide specs to your contribution.</p>
+
+<h3>Running specs</h3>
+
+<ul>
+<li>Fork and clone the repository.</li>
+<li>Run <code>npm install</code> for dependencies.</li>
+<li>Run <code>make test</code> to execute all specs.</li>
+<li>Run <code>make test-watch</code> to run your test suite at any change.</li>
+</ul><h2>Coding guidelines</h2>
+
+<p>Follow <a href="https://github.com/styleguide/">github</a> guidelines.</p>
+
+<h2>Feedback</h2>
+
+<p>Use the <a href="http://github.com/lelylan/lelylan-node/issues">issue tracker</a> for bugs.
+<a href="mailto:touch@lelylan.com">Mail</a> or <a href="http://twitter.com/lelylan">Tweet</a> us for any idea that can improve the project.</p>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="http://github.com/lelylan/lelylan-node">GIT Repository</a></li>
+<li><a href="http://dev.lelylan.com">Lelylan Dev Center</a></li>
+<li><a href="http://lelylan.com">Lelylan Site</a></li>
+</ul><h2>Authors</h2>
+
+<p><a href="http://twitter.com/andreareginato">Andrea Reginato</a></p>
+
+<h2>Contributors</h2>
+
+<p>Special thanks to the following people for submitting patches.</p>
+
+<h2>Changelog</h2>
+
+<p>See <a href="people/blob/master/CHANGELOG.md">CHANGELOG</a></p>
+
+<h2>Copyright</h2>
+
+<p>Copyright (c) 2013 <a href="http://lelylan.com">Lelylan</a>. See <a href="people/blob/master/LICENSE.md">LICENSE</a> for details.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
