@@ -73,7 +73,7 @@ provide specs to your contribution.
 
 * Fork and clone the repository.
 * Run `npm install` for dependencies.
-* Run `make test` to execute all specs.
+* Run `npm test` to execute all specs.
 * Run `make test-watch` to auto execute all specs when a file change.
 
 
