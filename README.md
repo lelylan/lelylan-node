@@ -39,8 +39,7 @@ var authorization_uri = OAuth2.AuthCode.authorizeURL({ redirect_uri: 'http://loc
 // Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
 res.redirect(authorization_uri);
 
-// Get the access token object.
-// The authorization code is given from the previous step.
+// Get the access token object (the authorization code is given from the previous step).
 var token;
 OAuth2.AuthCode.getToken({ code: 'authorization-code', redirectURI: 'http://localhost:3000/callback' },
   function(error, result) { token = OAuth2.AccessToken.create(result); }
@@ -55,13 +54,13 @@ Lelylan.Devices.all(function(error, response) {
 })
 ```
 
-Using Simple OAuth2 the access token is automatically refreshed when expired. Using
-other OAuth2 libraries could not work for Lelylan Node.
+Using Simple OAuth2 the access token is automatically refreshed when expired.
 
 
 ### Documentation
 
-Check out the complete [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
+* Check out the complete [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
+* Check out [Lelylan Dev Center](http://dev.lelylan.com/api#language=node)
 
 
 ## Contributing
