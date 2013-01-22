@@ -62,6 +62,17 @@ Using Simple OAuth2 the access token is automatically refreshed when expired.
 * [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
 * [Lelylan Dev Center](http://dev.lelylan.com/api#language=node)
 
+## Settings
+
+### API endpoint
+
+Configuration block.
+
+```javascript
+options = { 'endpoint' : 'http://localhost:8000' }
+Lelylan = require('lelylan')(options);
+```
+
 
 ## Contributing
 
