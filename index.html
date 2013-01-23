@@ -144,6 +144,11 @@ physical devices they should provide a simple set of web services.
 <p>Get real-time updates by subscribing to a resource and its related event.
 <a href="subscription.html">Learn more</a>.</p>
 
+<h3>Authenticated User Profile</h3>
+
+<p>Returns extended information for the authenticated user.
+<a href="profile.html">Learn more</a>.</p>
+
 <h2>Errors</h2>
 
 <p>Exceptions are raised when a 4xx or 5xx status code is returned.</p>
@@ -199,6 +204,7 @@ HTTP status and error message.</p>
     <span class="s1">&#39;Location&#39;</span>     <span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./client/location&#39;</span><span class="p">)(</span><span class="nx">config</span><span class="p">),</span>
     <span class="s1">&#39;Physical&#39;</span>     <span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./client/physical&#39;</span><span class="p">)(</span><span class="nx">config</span><span class="p">),</span>
     <span class="s1">&#39;Subscription&#39;</span> <span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./client/subscription&#39;</span><span class="p">)(</span><span class="nx">config</span><span class="p">),</span>
+    <span class="s1">&#39;Profile&#39;</span>      <span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./client/profile&#39;</span><span class="p">)(</span><span class="nx">config</span><span class="p">),</span>
     <span class="s1">&#39;config&#39;</span>       <span class="o">:</span> <span class="nx">config</span>
   <span class="p">}</span>
 <span class="p">};</span>
