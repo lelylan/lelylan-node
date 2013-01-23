@@ -1,9 +1,4 @@
-var oauth_credentials = { client: { id: 'client-id', secret: 'client-secret', site: 'http://people.lelylan.com' } };
-var json_token        = { 'access_token': '4adc339e06c', 'refresh_token': 'ec1a59d2', 'expires_in': 7200 };
-
-var OAuth2 = require('simple-oauth2')(oauth_credentials);
-var token  = OAuth2.AccessToken.create(json_token);
-
+var token   = require('./support/token')();
 var Lelylan = require('./../lib/lelylan-node.js')({ 'token': token});
 var nock    = require('nock');
 
@@ -39,7 +34,7 @@ describe('Lelylan API call',function() {
 
     beforeEach(function(done) {
 			Lelylan.config.token.token.expires_at = Date.yesterday();
-			var params = { 'grant_type': 'refresh_token', refresh_token: 'ec1a59d2' };
+			var params = { 'grant_type': 'refresh_token', refresh_token: 'ec1a59d298' };
 			request = nock('http://people.lelylan.com').post('/oauth/token', params).replyWithFile(200, __dirname + '/fixtures/access_token.json');
 			done();
 		});
