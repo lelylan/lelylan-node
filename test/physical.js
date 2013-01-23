@@ -32,8 +32,9 @@ describe('Lelylan.Physical',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      (response == undefined).should.be.true;
+      (error == null).should.be.true;
     });
   });
 })

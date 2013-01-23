@@ -28,7 +28,7 @@ describe('Lelylan API call',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
+    it('returns a json object',function() {
       response.should.have.property('id');
     });
   });

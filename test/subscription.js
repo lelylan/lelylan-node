@@ -22,8 +22,8 @@ describe('Lelylan.Subscription',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 
@@ -47,8 +47,8 @@ describe('Lelylan.Subscription',function() {
         request.isDone();
       });
 
-      it('return a json array',function() {
-        response.should.be.a('object');
+      it('returns a json array',function() {
+        response[0].should.have.property('id');
       });
     });
 
@@ -69,8 +69,8 @@ describe('Lelylan.Subscription',function() {
         request.isDone();
       });
 
-      it('return a json array',function() {
-        response.should.be.a('object');
+      it('returns a json array',function() {
+        response[0].should.have.property('id');
       });
     });
   });
@@ -93,8 +93,8 @@ describe('Lelylan.Subscription',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 
@@ -116,8 +116,8 @@ describe('Lelylan.Subscription',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 
@@ -139,8 +139,8 @@ describe('Lelylan.Subscription',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 })

@@ -9,13 +9,13 @@
     "id": "50420c3a267ff51300000001",
     "name": "Intensity",
     "suggested": {"0": "Min", "25": "Low", "50": "Half", "75": "High", "100": "Max"},
-    "default": "0",
+    "default": "0"
   }, {
     "uri": "http://api.lelylan.com/properties/50420c7e267ff51000000001",
     "id": "50420c7e267ff51000000001",
     "name": "Status",
     "suggested": {"on": "On", "off": "Off"},
-    "default": "off",
+    "default": "off"
   }],
   "functions": [{
     "uri": "http://api.lelylan.com/functions/5042205c70eda61000000003",

@@ -28,8 +28,8 @@ describe('Lelylan.Type',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 
@@ -53,8 +53,8 @@ describe('Lelylan.Type',function() {
         request.isDone();
       });
 
-      it('return a json array',function() {
-        response.should.be.a('object');
+      it('returns a json array',function() {
+        response[0].should.have.property('id');
       });
     });
 
@@ -75,8 +75,8 @@ describe('Lelylan.Type',function() {
         request.isDone();
       });
 
-      it('return a json array',function() {
-        response.should.be.a('object');
+      it('returns a json array',function() {
+        response[0].should.have.property('id');
       });
     });
   });
@@ -99,6 +99,9 @@ describe('Lelylan.Type',function() {
       request.isDone();
     });
 
+    it('returns a json object',function() {
+      response.should.have.property('id');
+    });
     it('return a json array',function() {
       response.should.be.a('object');
     });
@@ -122,8 +125,8 @@ describe('Lelylan.Type',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 
@@ -145,8 +148,8 @@ describe('Lelylan.Type',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      response.should.be.a('object');
+    it('returns a json object',function() {
+      response.should.have.property('id');
     });
   });
 })

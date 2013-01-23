@@ -9,7 +9,7 @@ var nock    = require('nock');
 
 var request, response, error;
 
-describe('Lelylan Error',function() {
+describe('Lelylan.HTTPError',function() {
 
   describe('with status code 500',function() {
 
@@ -28,8 +28,8 @@ describe('Lelylan Error',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      error.should.be.a('object');
+    it('returns a json object',function() {
+      error.message.should.have.property('error');
     });
   });
 
@@ -50,8 +50,8 @@ describe('Lelylan Error',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      error.should.be.a('object');
+    it('returns a json object',function() {
+      error.message.should.have.property('error');
     });
   });
 
@@ -72,8 +72,8 @@ describe('Lelylan Error',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      error.should.be.a('object');
+    it('returns a json object',function() {
+      error.message.should.have.property('error');
     });
   });
 
@@ -94,8 +94,8 @@ describe('Lelylan Error',function() {
       request.isDone();
     });
 
-    it('return a json array',function() {
-      error.should.be.a('object');
+    it('returns a json object',function() {
+      error.message.should.have.property('error');
     });
   });
 })

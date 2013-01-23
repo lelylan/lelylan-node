@@ -5,6 +5,6 @@
   "error": {
     "code": "notifications.resource.not_valid",
     "description": "Name can't be blank.",
-    "body": { "name": "" },
+    "body": { "name": "" }
   }
 }
