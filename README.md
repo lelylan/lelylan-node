@@ -27,29 +27,39 @@ Before calling Lelylan APIs you need to set the access token using
 [Simple OAuth2](https://github.com/andreareginato/simple-oauth2).
 
 ```javascript
-// Set the OAuth2 client credentials
-var credentials = { client: { id: '<client-id>', secret: '<client-secret>', site: 'https://example.org' }};
+// Set the client credentials
+var credentials = { client: {
+  id: '<client-id>',
+  secret: '<client-secret>',
+  site: 'http://people.lelylan.com'
+}};
 
 // Initialize the OAuth2 Library
 var OAuth2 = require('simple-oauth2')(credentials);
 
 // Authorization OAuth2 URI
-var authorization_uri = OAuth2.AuthCode.authorizeURL({ redirect_uri: 'http://localhost:3000/callback' });
+var authorization_uri = OAuth2.AuthCode.authorizeURL({
+  redirect_uri: 'http://localhost:3000/callback'
+});
 
 // Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
 res.redirect(authorization_uri);
 
-// Get the access token object (the authorization code is given from the previous step).
+// Get the access token object (authorization code is given from previous step)
 var token;
-OAuth2.AuthCode.getToken({ code: 'authorization-code', redirectURI: 'http://localhost:3000/callback' },
-  function(error, result) { token = OAuth2.AccessToken.create(result); }
-);
+OAuth2.AuthCode.getToken({
+  code: code,
+  redirect_uri: 'http://localhost:3000/callback'
+}, function(error, result) {
+  console.log('Saving Access Token' + result)
+  token = OAuth2.AccessToken.create(result);
+});
 
 // Initialize Lelylan Node library
 Lelylan = require('lelylan-node')({ token: token });
 
 // Get all devices
-Lelylan.Devices.all(function(error, response) {
+Lelylan.Device.all(function(error, response) {
   console.log(response)
 })
 ```
@@ -59,7 +69,7 @@ Using Simple OAuth2 the access token is automatically refreshed when expired.
 
 ### Documentation
 
-* [Lelylan Node Documentation](http://lelylan.github.com/lelylan-node).
+* [Lelylan Node Website](http://lelylan.github.com/lelylan-node).
 * [Lelylan Dev Center](http://dev.lelylan.com/api#language=node)
 
 ## Settings

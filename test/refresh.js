@@ -1,6 +1,7 @@
 var token   = require('./support/token')();
 var Lelylan = require('./../lib/lelylan-node.js')({ 'token': token});
 var nock    = require('nock');
+var qs      = require('querystring');
 
 var request, response, error;
 
@@ -35,7 +36,7 @@ describe('Lelylan API call',function() {
     beforeEach(function(done) {
 			Lelylan.config.token.token.expires_at = Date.yesterday();
 			var params = { 'grant_type': 'refresh_token', refresh_token: 'ec1a59d298' };
-			request = nock('http://people.lelylan.com').post('/oauth/token', params).replyWithFile(200, __dirname + '/fixtures/access_token.json');
+			request = nock('http://people.lelylan.com').post('/oauth/token', qs.stringify(params)).replyWithFile(200, __dirname + '/fixtures/access_token.json');
 			done();
 		});
 
