@@ -5,6 +5,7 @@
 * Fixed bug on parsing JSON for GET and DELETE requests
 * Refactoring all tests to make more reliable
 * Fixed activation definition which was wrong
+* Added tests for public services (they do not need access token)
 
 ## v0.1.1 (January 24, 2013)
 
