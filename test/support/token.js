@@ -17,5 +17,5 @@ module.exports = function() {
   };
 
   var OAuth2   = require('simple-oauth2')(oauth_credentials);
-  return token = OAuth2.AccessToken.create(json_token);
+  return OAuth2.AccessToken.create(json_token);
 };
