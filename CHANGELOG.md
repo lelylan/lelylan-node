@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.6 (January 25, 2013)
+
+* Added public method to type, properties, functions and statuses
+
 ## v0.1.5 (January 25, 2013)
 
 * Fixed missing Basic Auth. For some wierd reason it is not created
