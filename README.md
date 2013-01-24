@@ -145,6 +145,12 @@ options = { 'endpoint' : 'http://localhost:8000' }
 Lelylan = require('lelylan')(options);
 ```
 
+To directly access to the config object use the `#config` method.
+
+```javascript
+var rawToken = Lelylan.config.token.token
+```
+
 
 ## Lelylan Services
 

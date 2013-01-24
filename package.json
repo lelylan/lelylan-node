@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "request": "~2.12.0",
-    "node-uuid": "~1.4.0",
-    "simple-oauth2": "~0.1.4"
+    "node-uuid": "~1.4.0"
   },
   "devDependencies": {
     "should": "~1.2.1",
     "mocha": "~1.8.1",
     "nock": "~0.14.3",
-    "docco": "~0.4.0"
+    "docco": "~0.4.0",
+    "simple-oauth2": "~0.1.5"
   },
   "main": ".",
   "scripts": {
