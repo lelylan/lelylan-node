@@ -33,7 +33,8 @@ Install the client library using git:
 ### Get an access token
 
 Before calling Lelylan APIs you need to set the access token using
-[Simple OAuth2](https://github.com/andreareginato/simple-oauth2).
+[Simple OAuth2](https://github.com/andreareginato/simple-oauth2). If not used to OAuth2,
+check out the [dev center documentation](http://dev.lelylan.com/api/oauth#language=node).
 
 ```javascript
 // Set the client credentials and the OAuth2 server
@@ -68,7 +69,7 @@ OAuth2.AuthCode.getToken({
 });
 ```
 
-### Lelylan ACCESS
+### Lelylan access
 
 Once you have the access token you can access to the Lelylan API. The
 following example shows how to print in the console a list of owned devices.
@@ -87,14 +88,14 @@ Lelylan.Device.all({}, function(error, response) {
 Using a Simple OAuth2 AccessToken, the access token is automatically refreshed when it expires.
 
 
-### Realtime services access
+### Realtime services
 
-When using the [subscriptions](http://dev.lelylan.com/api/realtime) services (realtime)
-you don't need an access token. In these cases you need to set the client credentials.
+When using the [subscription](http://dev.lelylan.com/api/realtime#language=node) services (realtime)
+you don't need an access token. In this case you need to set the client credentials.
 
 ```javascript
 // Setup credentials
-credentials = { client: { id: '<client-id>', secret: '<client-secret>' } };
+credentials = {client: { id: '<client-id>', secret: '<client-secret>' }};
 Lelylan = require('lelylan-node')(credentials);
 
 // Get all subscriptions
@@ -111,7 +112,7 @@ Exceptions are raised when a 4xx or 5xx status code is returned.
     HTTPError
 
 Through the error message attribute you can access the JSON representation
-made by the `HTTP status` and an error `message`.
+made by the HTTP `status` and an error `message`.
 
 ```javascript
 Lelylan.Device.all({}, function(error, response) {
@@ -206,7 +207,7 @@ Get real-time updates by subscribing to a resource and its related event.
 ### Authenticated User Profile
 
 Returns extended information for the authenticated user.
-[See examples](http://dev.lelylan.com/api/core#user-profile&language=node).
+[See examples](http://dev.lelylan.com/api/core#user-profile).
 
 
 ## Contributing
@@ -254,9 +255,10 @@ Special thanks to the following people for submitting patches.
 
 ## Changelog
 
-See [CHANGELOG](people/blob/master/CHANGELOG.md)
+See [CHANGELOG](https://github.com/lelylan/lelylan-node/blob/master/CHANGELOG.md)
 
 
 ## Copyright
 
-Copyright (c) 2013 [Lelylan](http://lelylan.com). See [LICENSE](people/blob/master/LICENSE.md) for details.
+Copyright (c) 2013 [Lelylan](http://lelylan.com).
+See [LICENSE](https://github.com/lelylan/lelylan-node/blob/master/LICENSE.md) for details.
