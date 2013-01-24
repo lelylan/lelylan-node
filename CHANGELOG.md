@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.4 (January 25, 2013)
+
+* Fixed missing Basic Auth. For some wierd reason it is not created
+from the request library
+
 ## v0.1.3 (January 25, 2013)
 
 * Moved Simple OAuth2 dependency to dev. In this way we totally decouple
