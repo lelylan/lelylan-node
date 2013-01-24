@@ -56,6 +56,9 @@ var authorization_uri = OAuth2.AuthCode.authorizeURL({
   state: '<state>'
 });
 
+console.log('Auhtorization URI', authorization_uri);
+// => http://people.lelylan.com/oauth/authorize?redirect_uri=http://localhost:3000/callback&scope=devices&response_type=code&client_id=<client-id>
+
 // Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
 res.redirect(authorization_uri);
 
@@ -79,7 +82,7 @@ following example shows how to print in the console a list of owned devices.
 
 ```javascript
 // Initialize Lelylan Node library
-Lelylan = require('lelylan-node')({ token: token });
+var Lelylan = require('lelylan-node')({ token: token });
 
 // Get all devices
 Lelylan.Device.all({}, function(error, response) {
