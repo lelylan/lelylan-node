@@ -2,6 +2,11 @@
 
 ## v0.1.3 (January 25, 2013)
 
+* Moved Simple OAuth2 dependency to dev. In this way we totally decouple
+the OAuth mechanism from Lelylan services.
+
+## v0.1.3 (January 25, 2013)
+
 * Fixed bug on index.js referencing the wrong file
 
 ## v0.1.2 (January 24, 2013)
