@@ -1,4 +1,4 @@
-var credentials = { client: { id: 'client-id', secret: 'secret' } };
+var credentials = { clientID: 'client-id', clientSecret: 'secret' };
 var Lelylan = require('./../lib/lelylan-node.js')(credentials);
 var nock    = require('nock');
 var request, response, error;
