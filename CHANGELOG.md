@@ -2,6 +2,10 @@
 
 ## v0.1.6 (January 25, 2013)
 
+* Update credentials for clients to naming used by simple oauth2
+
+## v0.1.6 (January 25, 2013)
+
 * Added public method to type, properties, functions and statuses
 
 ## v0.1.5 (January 25, 2013)

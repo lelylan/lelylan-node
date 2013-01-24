@@ -3,11 +3,9 @@ var exports = module.exports;
 module.exports = function() {
 
   var oauth_credentials = {
-    client: {
-      id: 'client-id',
-      secret: 'client-secret',
-      site: 'http://people.lelylan.com'
-    } 
+    clientID: 'client-id',
+    clientSecret: 'client-secret',
+    site: 'http://people.lelylan.com'
   };
 
   var json_token = {
@@ -16,6 +14,6 @@ module.exports = function() {
     'expires_in': 7200
   };
 
-  var OAuth2   = require('simple-oauth2')(oauth_credentials);
+  var OAuth2 = require('simple-oauth2')(oauth_credentials);
   return OAuth2.AccessToken.create(json_token);
 };

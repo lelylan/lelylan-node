@@ -39,11 +39,11 @@ check out the [dev center documentation](http://dev.lelylan.com/api/oauth#langua
 
 ```javascript
 // Set the client credentials and the OAuth2 server
-var credentials = { client: {
-  id:     '<client-id>',
-  secret: '<client-secret>',
-  site:   'http://people.lelylan.com'
-}};
+var credentials = {
+  clientID: '<client-id>',
+  clientSecret: '<client-secret>',
+  site: 'http://people.lelylan.com'
+};
 
 // Initialize the OAuth2 Library
 var OAuth2 = require('simple-oauth2')(credentials);
@@ -101,7 +101,7 @@ you don't need an access token. In this case you need to set the client credenti
 
 ```javascript
 // Setup credentials
-credentials = {client: { id: '<client-id>', secret: '<client-secret>' }};
+credentials = { clientID: '<client-id>', clientSecret: '<client-secret>' };
 Lelylan = require('lelylan-node')(credentials);
 
 // Get all subscriptions
@@ -134,8 +134,8 @@ Learn more about [errors on Lelylan](http://dev.lelylan.com/api/core#errors).
 Lelylan Configuration accepts an object with the following valid params.
 
 * `token` - A [Simple OAuth2 AccessToken](http://andreareginato.github.com/simple-oauth2/#getting-started/access-token-object) object.
-* `client.id` - A string that represents the registered Client ID.
-* `client.secret` - A string that represents the registered Client secret.
+* `clientID` - A string that represents the registered Client ID.
+* `clientSecret` - A string that represents the registered Client secret.
 * `endpoint` - A string that represents the API endpoint (`api.lelylan.com` by deafault).
 
 Here a simple example where we change the API endpoint.
