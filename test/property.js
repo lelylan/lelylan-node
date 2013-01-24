@@ -77,6 +77,54 @@ describe('Lelylan.Property',function() {
   });
 
 
+  describe('#public',function() {
+
+    describe('with no search params', function() {
+
+      beforeEach(function(done) {
+        request = nock('http://api.lelylan.com').get('/properties/public').replyWithFile(200, __dirname + '/fixtures/properties.json');
+        done();
+      })
+
+      beforeEach(function(done) {
+        Lelylan.Property.public({}, function(e, r) {
+          error = e; response = r; done();
+        })
+      })
+
+      it('makes the HTTP request', function() {
+        request.isDone();
+      });
+
+      it('returns a json array',function() {
+        response[0].should.have.property('id');
+      });
+    });
+
+    describe('with search params', function() {
+
+      beforeEach(function(done) {
+        request = nock('http://api.lelylan.com').get('/properties/public?per=10').replyWithFile(200, __dirname + '/fixtures/properties.json');
+        done();
+      })
+
+      beforeEach(function(done) {
+        Lelylan.Property.public({'per': 10}, function(e, r) {
+          error = e; response = r; done();
+        })
+      })
+
+      it('makes the HTTP request', function() {
+        request.isDone();
+      });
+
+      it('returns a json array',function() {
+        response[0].should.have.property('id');
+      });
+    });
+  });
+
+
   describe('#create',function() {
 
     beforeEach(function(done) {
