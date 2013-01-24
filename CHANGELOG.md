@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.3 (January 25, 2013)
+
+* Fixed bug on index.js referencing the wrong file
+
 ## v0.1.2 (January 24, 2013)
 
 * Fixed bug on parsing JSON for GET and DELETE requests
