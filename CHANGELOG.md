@@ -1,6 +1,10 @@
 # Changelog
 
-## v0.1.6 (January 25, 2013)
+## v0.1.8 (January 25, 2013)
+
+* Fixed bug about client naming for realtime service
+
+## v0.1.7 (January 25, 2013)
 
 * Update credentials for clients to naming used by simple oauth2
 
