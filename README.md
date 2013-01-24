@@ -33,7 +33,7 @@ Install the client library using git:
 ### Get an access token
 
 Before calling Lelylan APIs you need to set the access token using
-[Simple OAuth2](https://github.com/andreareginato/simple-oauth2). If not used to OAuth2,
+[Simple OAuth2](https://github.com/andreareginato/simple-oauth2). If not used to OAuth2 concepts,
 check out the [dev center documentation](http://dev.lelylan.com/api/oauth#language=node).
 
 ```javascript
