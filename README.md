@@ -20,6 +20,7 @@ Node client library is tested against Node ~0.8.x
 Install the client library using [npm](http://npmjs.org/):
 
     $ npm install lelylan-node
+    $ npm install simple-oauth2
 
 Install the client library using git:
 
@@ -41,13 +42,14 @@ check out the [dev center documentation](http://dev.lelylan.com/api/oauth#langua
 var credentials = { client: {
   id:     '<client-id>',
   secret: '<client-secret>',
-  site:   'https://people.lelylan.com'
+  site:   'http://people.lelylan.com'
 }};
 
 // Initialize the OAuth2 Library
 var OAuth2 = require('simple-oauth2')(credentials);
 
 // Authorization OAuth2 URI
+// See available scopes here http://localhost:4000/api/oauth#scopes
 var authorization_uri = OAuth2.AuthCode.authorizeURL({
   redirect_uri: 'http://localhost:3000/callback',
   scope: '<scope>',
@@ -66,6 +68,7 @@ OAuth2.AuthCode.getToken({
   // Save the access token
   if (error) console.log('Access Token Error', error.message);
   token = OAuth2.AccessToken.create(result);
+  console.log('Access Token', token);
 });
 ```
 
