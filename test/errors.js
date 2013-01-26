@@ -24,7 +24,7 @@ describe('Lelylan.HTTPError',function() {
     });
 
     it('returns a json object',function() {
-      error.message.should.have.property('error');
+      error.message.message.should.eql('Internal Server Error');
     });
   });
 
@@ -46,7 +46,7 @@ describe('Lelylan.HTTPError',function() {
     });
 
     it('returns a json object',function() {
-      error.message.should.have.property('error');
+      error.message.message.should.eql('Token not valid');
     });
   });
 
@@ -68,7 +68,7 @@ describe('Lelylan.HTTPError',function() {
     });
 
     it('returns a json object',function() {
-      error.message.should.have.property('error');
+      error.message.message.should.eql('Resource not found');
     });
   });
 
@@ -90,7 +90,7 @@ describe('Lelylan.HTTPError',function() {
     });
 
     it('returns a json object',function() {
-      error.message.should.have.property('error');
+      error.message.message.should.eql("Name can't be blank.");
     });
   });
 })

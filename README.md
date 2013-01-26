@@ -235,6 +235,14 @@ provide specs to your contribution.
 * Run `npm test` to execute all specs.
 * Run `make test-watch` to auto execute all specs when a file change.
 
+### Running locally
+
+```
+$ git clone https://github.com/lelylan/lelylan-rb
+$ cd lelylan-rb
+$ node
+$ > var lelylan = require('./lib/lelylan-node.js')();
+```
 
 ## Coding guidelines
 
