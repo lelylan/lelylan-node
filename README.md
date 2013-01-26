@@ -60,8 +60,8 @@ var authorization_uri = OAuth2.AuthCode.authorizeURL({
 
 console.log('Auhtorization URI', authorization_uri);
 // => http://people.lelylan.com/oauth/authorize?
-        redirect_uri=<redirect-uri>&
-        scope=<scopes>&response_type=code&client_id=<client-id>
+//      redirect_uri=<redirect-uri>&
+//      scope=<scopes>&response_type=code&client_id=<client-id>
 
 // Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
 res.redirect(authorization_uri);
