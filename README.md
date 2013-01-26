@@ -4,7 +4,7 @@ Node.js client library for [Lelylan API](http://dev.lelylan.com).
 
 ## What is Lelylan
 
-What is Lelylan? Lelylan makes it easy for developers to monitor and control all devices in
+Lelylan makes it easy for developers to monitor and control all devices in
 your house providing a simple, self descriptive and consistent representation of them. Lelylan
 maps every device in your house to a unique URI which will provide a simple access over it.
 
