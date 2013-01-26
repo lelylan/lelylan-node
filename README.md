@@ -53,13 +53,15 @@ var OAuth2 = require('simple-oauth2')(credentials);
 // Authorization OAuth2 URI
 // See available scopes here http://localhost:4000/api/oauth#scopes
 var authorization_uri = OAuth2.AuthCode.authorizeURL({
-  redirect_uri: 'http://localhost:3000/callback',
-  scope: '<scope>',
+  redirect_uri: '<redirect-uri>',
+  scope: '<scopes>',
   state: '<state>'
 });
 
 console.log('Auhtorization URI', authorization_uri);
-// => http://people.lelylan.com/oauth/authorize?redirect_uri=http://localhost:3000/callback&scope=devices&response_type=code&client_id=<client-id>
+// => http://people.lelylan.com/oauth/authorize?
+        redirect_uri=<redirect-uri>&
+        scope=<scopes>&response_type=code&client_id=<client-id>
 
 // Redirect example using Express (see http://expressjs.com/api.html#res.redirect)
 res.redirect(authorization_uri);
@@ -68,7 +70,7 @@ res.redirect(authorization_uri);
 var token;
 OAuth2.AuthCode.getToken({
   code: '<code>',
-  redirect_uri: 'http://localhost:3000/callback'
+  redirect_uri: '<client-id>'
 }, function(error, result) {
   // Save the access token
   if (error) console.log('Access Token Error', error.message);
@@ -183,7 +185,7 @@ Lelylan.Device.all({}, function(error, response) {
 ```
 
 The `error.message` object contains the `status` and the `message` properties.
-401, 403, 404, 422 responses has also a accessible object.
+401, 403, 404, 422 responses has also a valid `response` object.
 Learn more about [errors on Lelylan](http://dev.lelylan.com/api/core#errors).
 
 
