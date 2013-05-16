@@ -2,14 +2,13 @@
 
 Node.js client library for [Lelylan API](http://dev.lelylan.com).
 
-## What is Lelylan
 
-Lelylan makes it easy for developers to monitor and control all devices in
-your house providing a simple, self descriptive and consistent representation of them. Lelylan
-maps every device in your house to a unique URI which will provide a simple access over it.
+## Introduction
 
-With Lelylan developers can build secure applications and services that use real-time data
-coming from the real world to create the future connected house.
+### What is Lelylan
+
+[Lelylan](http://lelylan.com) makes it easy for developers to monitor and control all devices
+in your house providing a simple and consistent REST API.
 
 
 ## Requirements
@@ -36,8 +35,9 @@ Install the client library using git:
 ### Get an access token
 
 Before calling Lelylan APIs you need to set the access token using
-[Simple OAuth2](https://github.com/andreareginato/simple-oauth2). If not used to OAuth2 concepts,
-check out the [dev center documentation](http://dev.lelylan.com/api/oauth#language=node).
+[Simple OAuth2](https://github.com/andreareginato/simple-oauth2).
+If you are not used to OAuth2 concepts check out the
+[dev center documentation](http://dev.lelylan.com/api/oauth#language=node).
 
 ```javascript
 // Set the client credentials and the OAuth2 server
