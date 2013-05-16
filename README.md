@@ -119,54 +119,20 @@ Lelylan.Subscriptions.all(function(error, response) {
 
 ### Implemented Services
 
-**Devices** - The Device API defines a set of services to monitor and control every existing
-device. Its final goal is to map every device to a unique URI which provides control over it.
-[See examples](http://dev.lelylan.com/api/devices#node).
+Learn how to use Lelylan and AngulasJS in deep.
 
-**Activations** - Easy way to move the device ownership between people.
-[See examples](http://dev.lelylan.com/api/devices#node).
-
-**Histories** - When a device updates its properties or executes a function a new history
-resource with a snapshot of all device properties is created by Lelylan, also the ones that
-has not been updated. This makes it easy to recreate previous device status and extract usage
-patterns to improve the way people live their house.
-[See examples](http://dev.lelylan.com/api/devices/histories#node).
-
-**Types** - A type describes the structure of a device. In its simplest form every type can be
-defined as the combination of three key elements: properties (what vary during time), functions
-(what a device can do), statuses (what a device is in a specific time of its life).
-[See examples](http://dev.lelylan.com/api/types#node).
-
-**Properties** - A property is whatever vary in a device during time. It can be the intensity in
-a dimmer, the temperature in a cooling system or the volume in a television.
-[See examples](http://dev.lelylan.com/api/types/properties#node).
-
-**Functions** - Functions defines the daily interactions you have with the devices in your house,
-for example when you turn on a light, close a door or raise the temperature in a room.
-With functions you can control any device in the same way you do everyday of your life.
-[See examples](http://dev.lelylan.com/api/types/functions#node).
-
-**Statuses** - Properties are not always enough to describe the status of a device. Think at a roller
-shutter for example. It has the property aperture that is 100 when open or 0 when closed.
-But what if the roller shutter is opening? It is nether open or close. To have a complete
-control over the device status in a specific moment of its life is to use the status API.
-[See examples](http://dev.lelylan.com/api/types/statuses#node).
-
-**Locations** - Locations are the places we live in and where physical devices are placed. Lelylan identifies
-three types of locations usually organized in a hierarchical structure: houses, floors and
-rooms.
-[See examples](http://dev.lelylan.com/api/locations#node).
-
-**Physical Devices** - Physical devices are the real objects you physically interact with everyday of your life
-like lights, appliances, alarms and more. To enable the communication between Lelylan and
-physical devices they should provide a simple set of web services.
-[See examples](http://dev.lelylan.com/api/physicals#node).
-
-**Subscriptions** - Get realtime updates by subscribing to a resource and its related event.
-[See examples](http://dev.lelylan.com/api/realtime#node).
-
-**User Profile** - Returns extended information for the authenticated user.
-[See examples](http://dev.lelylan.com/api/core#get-a-user-node).
+- [x] [Devices](http://dev.lelylan.com/api/devices#angular).
+- [x] [Activations](http://dev.lelylan.com/api/devices#angular).
+- [x] [Histories](http://dev.lelylan.com/api/devices/histories#angular).
+- [x] [Types](http://dev.lelylan.com/api/types#angular).
+- [x] [Properties](http://dev.lelylan.com/api/types/properties#angular).
+- [x] [Functions](http://dev.lelylan.com/api/types/functions#angular).
+- [x] [Statuses](http://dev.lelylan.com/api/types/statuses#angular).
+- [x] [Locations](http://dev.lelylan.com/api/locations#angular).
+- [x] [Physical devices](http://dev.lelylan.com/api/physicals#angular).
+- [x] [Subscriptions](http://dev.lelylan.com/api/realtime#angular).
+- [x] [User Profile](http://dev.lelylan.com/api/core#get-a-user-angular).
+- [x] [OAuth2](http://dev.lelylan.com/api/oauth#implicit-grant-angular).
 
 
 ### Errors
@@ -228,8 +194,8 @@ provide specs to your contribution.
 ### Running locally
 
 ```
-$ git clone https://github.com/lelylan/lelylan-rb
-$ cd lelylan-rb
+$ git clone https://github.com/lelylan/lelylan-node
+$ cd lelylan-node
 $ node
 $ > var lelylan = require('./lib/lelylan-node.js')();
 ```

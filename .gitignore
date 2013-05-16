@@ -18,5 +18,8 @@ node_modules
 # Procfile env
 *.env
 
-#Documentation
+# Documentation
 docs/
+
+# Local tests
+.test.js

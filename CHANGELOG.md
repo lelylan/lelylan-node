@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.9 (May 16, 2013)
+
+* Added [categories](http://dev.lelylan.com/api/types#categories) service
+* Updated physical service to set the secret header
+
 ## v0.1.8 (January 25, 2013)
 
 * Fixed bug about client naming for realtime service
