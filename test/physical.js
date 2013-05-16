@@ -9,7 +9,7 @@ describe('Lelylan.Physical',function() {
   describe('#properties',function() {
 
     beforeEach(function(done) {
-      var signature = 'b919e6d73fb956335507b809c457cbda0e4856e2';
+      var secret = 'b919e6d73fb956335507b809c457cbda0e4856e2';
       request = nock('http://mqtt.lelylan.com')
                 .filteringRequestBody(function(path) {return '*'})
                 .put('/physicals/1', '*')
@@ -19,7 +19,9 @@ describe('Lelylan.Physical',function() {
 
     beforeEach(function(done) {
       Lelylan.Physical.properties('http://mqtt.lelylan.com/physicals/1', 'secret', {'properties': {}}, function(e, r) {
-        error = e; response = r; done();
+        error = e;
+        response = r;
+        done();
       })
     })
 
