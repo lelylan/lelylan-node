@@ -10,7 +10,7 @@ Node SDK is tested against Node ~0.8.x
 
 ## Installation
 
-#### Using [npm](http://npmjs.org/)
+#### Using npm
 
     $ npm install lelylan-node
     $ npm install simple-oauth2
