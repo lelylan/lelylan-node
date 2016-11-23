@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "request": "~2.12.0",
-    "node-uuid": "~1.4.0"
+    "uuid": "^3.0.0"
   },
   "devDependencies": {
     "should": "~1.2.1",
